@@ -9,6 +9,4 @@ public class student extends person{
         System.out.println("Inside student : Constructor");
         
     }
-    
-    
 }
