@@ -7,7 +7,12 @@ public class TaksiLangganan extends Taksi {
     }
 
     @Override
-    protected double hitungBiayaKilometer() {
+    protected double totalBiayaKilometer() {
         return jumlahKilometer <= 2 ? 0 : (jumlahKilometer - 2) * biayaPerKilometer;
+    }
+
+    @Override
+    public double hitungTotalBayar() {
+        return biayaAwal + totalBiayaKilometer();
     }
 }

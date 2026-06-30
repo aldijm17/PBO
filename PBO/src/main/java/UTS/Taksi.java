@@ -20,20 +20,26 @@ public class Taksi {
         this.biayaPerKilometer = biayaPerKilometer;
     }
 
-    protected double hitungBiayaKilometer() {
+    protected double totalBiayaKilometer() {
         return jumlahKilometer * biayaPerKilometer;
     }
 
     public double hitungTotalBayar() {
-        return biayaAwal + hitungBiayaKilometer();
+        return biayaAwal + totalBiayaKilometer();
     }
 
     public void tampilkanInfo() {
-        System.out.println("=== Data Taksi ===");
+        System.out.println("=== Data Taksi ===");    
+        System.out.println("!!Jika Jenis Penumpang adalah Langganan maka Gratis Biaya 2KM");
         System.out.println("ID Taksi           : " + idTaksi);
         System.out.println("Plat Nomor         : " + platNomor);
         System.out.println("Nama Supir         : " + namaSupir);
         System.out.println("Jenis Penumpang    : " + jenisPenumpang);
+        if ("langganan".equals(jenisPenumpang)){
+            System.out.println("Gratis Biaya 2KM!!");
+        }else{
+            System.out.println("Tidak ada Gratis Biaya karena bukan LANGGANAN");
+        }
         System.out.println("Jumlah Kilometer   : " + jumlahKilometer);
         System.out.println("Biaya Awal         : " + biayaAwal);
         System.out.println("Biaya Per Kilometer: " + biayaPerKilometer);
